@@ -18,7 +18,7 @@ use Magento\Search\Model\QueryFactory;
 use Magento\Search\Model\Autocomplete\ItemFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Smile\ElasticsuiteCore\Helper\Autocomplete as ConfigurationHelper;
-use Smile\ElasticsuiteCms\Model\ResourceModel\Page\Fulltext\CollectionFactory as CmsCollectionFactory;
+use Smile\ElasticsuiteCms\Model\ResourceModel\Page\Fulltext\Collection as CmsCollectionFactory;
 use Smile\ElasticsuiteCore\Model\Autocomplete\Terms\DataProvider as TermDataProvider;
 use Magento\Framework\Event\ManagerInterface as EventManager;
 
@@ -177,7 +177,7 @@ class DataProvider implements DataProviderInterface
      */
     private function getCmsPageCollection()
     {
-        $pageCollection = $this->cmsCollectionFactory->create();
+        $pageCollection = $this->cmsCollectionFactory;
         
         $pageCollection->setPageSize($this->getResultsPageSize());
         
